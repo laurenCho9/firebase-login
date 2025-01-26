@@ -1,0 +1,24 @@
+.nav {
+  background-color: royalblue;
+  padding: 20px 50px;
+}
+
+/* 
+💡 **언더바( _ )와 하이픈( - )**
+
+클래스 네이밍에 언더바를 사용하는 이유는 하이픈을 사용할 경우 자바스크립트 변수 및 프로퍼티 네이밍 규칙(https://developer.mozilla.org/ko/docs/Glossary/Identifier)에 어긋나기 때문입니다. 만약 하이픈 케이스를 사용하고 싶다면
+className={styles.list-nav} 가 아닌
+className={styles[“list-nav ”]} 로 작성해야합니다.
+*/
+.nav .list_nav {
+  display: flex;
+  justify-content: right;
+  gap: 16px;
+}
+
+.nav .title {
+  color: #fff;
+}
+.nav a {
+  color: #fff;
+}

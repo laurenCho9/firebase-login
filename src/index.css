@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+/* base styles */
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* 
+브라우저 css 스타일을 리셋하기 위해 normalize.css 를 설치
+yarn add normalize.css
+*/
