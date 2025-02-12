@@ -5,7 +5,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLoginData = (e) => {
+  const handleData = (e) => {
     if (e.target.type === "email") {
       setEmail(e.target.value);
     } else if (e.target.type === "password") {
@@ -29,7 +29,7 @@ const Login = () => {
           type="email"
           id="myEmail"
           value={email}
-          onChange={handleLoginData}
+          onChange={handleData}
           required
         />
         {/* password */}
@@ -38,7 +38,7 @@ const Login = () => {
           type="password"
           id="myPassword"
           value={password}
-          onChange={handleLoginData}
+          onChange={handleData}
           required
         />
 
