@@ -1,11 +1,13 @@
 import { useState } from "react";
 import styles from "./signup.module.css";
+import { useSignup } from "../../hooks/useSignup";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
   // displayName는 firebase속성명
   const [displayName, setDisplayName] = useState("");
   const [password, setPassword] = useState("");
+  const { error, isPending, signup } = useSignup();
 
   const handleData = (e) => {
     if (e.target.type === "email") {
@@ -20,7 +22,7 @@ const Signup = () => {
   const handleSubmit = (e) => {
     // 페이지리로딩 제어
     e.preventDefault();
-    console.log(email, password);
+    signup(email, password, displayName);
   };
 
   return (
