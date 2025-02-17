@@ -26,6 +26,7 @@ className={styles[“list-nav ”]} 로 작성해야합니다.
 }
 
 .nav button {
+  margin-left: 20px;
   padding: 6px 12px;
   border-radius: 10px;
   background-color: teal;
