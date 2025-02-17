@@ -1,9 +1,11 @@
 import { useState } from "react";
 import styles from "./login.module.css";
+import { useLogin } from "../../hooks/useLogin";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { error, isPending, login } = useLogin();
 
   const handleData = (e) => {
     if (e.target.type === "email") {
@@ -16,7 +18,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     // 페이지리로딩 제어
     e.preventDefault();
-    console.log(email, password);
+    login(email, password);
   };
 
   return (
@@ -42,9 +44,13 @@ const Login = () => {
           required
         />
 
-        <button type="submit" className={styles.button}>
-          로그인
-        </button>
+        {!isPending && (
+          <button type="submit" className={styles.button}>
+            로그인
+          </button>
+        )}
+        {!isPending && <strong>로그인 진행중입니다...</strong>}
+        {error && <strong>{error}</strong>}
       </fieldset>
     </form>
   );
