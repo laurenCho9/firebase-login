@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useFirestore } from "../../hooks/useFirestore";
 
 const DiaryForm = ({ uid }) => {
@@ -14,6 +14,13 @@ const DiaryForm = ({ uid }) => {
       setText(value);
     }
   };
+
+  useEffect(() => {
+    if (response.success) {
+      setTitle("");
+      setText("");
+    }
+  }, [response.success]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
